@@ -1,0 +1,40 @@
+---
+import Logo from './Logo.astro';
+import Nav from './Nav.astro';
+
+
+---
+
+<header>
+  <Logo />
+  <img id="hamburger" width="24" height="21" src="src/assets/shared/icon-hamburger.svg" alt="menu button">
+</header>
+<Nav />
+
+<script >
+const hamburger = globalThis.document.getElementById('hamburger')
+const nav = globalThis.document.querySelector('aside')
+const closeBtn = globalThis.document.querySelector('.btn-close-menu')
+
+hamburger?.addEventListener('click', () => {
+  console.log('hamburger clicked');
+  nav!.style.right = '0'
+  // nav!.toggleAttribute('hidden')
+})
+
+closeBtn?.addEventListener('click', () => {
+  console.log('close button clicked');
+  nav!.style.right = '-16rem'
+    // nav!.toggleAttribute('hidden')
+  })
+</script>
+<style>
+  header {
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+    transition:  all 2s ease;
+  }
+</style>

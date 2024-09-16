@@ -1,0 +1,30 @@
+---
+// styles
+import '../styles/components/_nav.scss';
+
+// props
+// interface Props {
+// 	title: string;
+// 	body: string;
+// 	href: string;
+// }
+
+// const { href, title, body } = Astro.props;
+
+// variables
+let navItems = ['HOME', 'DESTINATION', 'CREW', 'TECHNOLOGY'];
+---
+<aside class="nav">
+  <img width="24" height="21" class="btn-close-menu" src="src/assets/shared/icon-close.svg" alt="close button">
+  <nav class="nav-container">
+    <ul class="nav-list">
+      {
+        navItems.map((item, i) => (<li class="nav-item text-preset-8"> <a href={`/${item}`} class="nav-link"><b class="nav-number">0{i}</b>{item}</a> </li>))
+      }
+    </ul>
+  </nav>
+</aside>
+
+<script >
+
+</script>

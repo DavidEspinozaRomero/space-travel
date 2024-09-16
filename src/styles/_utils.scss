@@ -1,0 +1,65 @@
+@import "./variables";
+
+.flex {
+  display: flex;
+  gap: var(--gap, 1.6rem);
+}
+
+.grid {
+  display: grid;
+  gap: var(--gap, 1.6rem);
+}
+
+.container {
+  max-width: 90rem;
+  margin-inline: auto;
+  padding-inline: 1.6rem;
+}
+
+.ff-serif-bellefair {
+  font-family: $battlefair;
+}
+.ff-sans-barlow {
+  font-family: $barlow;
+}
+.ff-sans-barlow-condensed {
+  font-family: $barlow-condensed;
+}
+.text-center {
+  text-align: center;
+}
+.fw-bold {
+  font-weight: 600;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: rect(0, 0, 0, 0);
+  white-space: nowrap; /* added line */
+  border: 0;
+}
+
+.bg-dark {
+  background-color: hsl($blue-900);
+}
+.bg-accent {
+  background-color: hsl($blue-300);
+}
+.bg-white {
+  background-color: hsl($white);
+}
+
+.text-dark {
+  color: hsl($blue-900);
+}
+.text-accent {
+  color: hsl($blue-300);
+}
+.text-white {
+  color: hsl($white);
+}

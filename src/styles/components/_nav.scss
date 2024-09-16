@@ -1,0 +1,44 @@
+@import "../variables";
+
+.btn-close-menu {
+  display: block;
+  margin: 3rem 2rem 2rem auto;
+}
+.nav-number {
+  padding-right: 12px;
+}
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: $white;
+}
+
+@media (width < 500px) {
+  aside {
+    position: fixed;
+    top: 0;
+    right: -16rem;
+    width: 16rem;
+    height: 100vh;
+    height: 100dvh;
+    backdrop-filter: blur(0.25rem);
+    z-index: 3;
+    transition: 0.3s ease;
+
+    ul {
+      margin: 5rem 0;
+      padding-left: 2rem;
+    }
+    li {
+      margin: 2rem auto;
+
+      &:hover,
+      &:focus,
+      &:active {
+        border-right: 5px solid hsl($white/ 0.5);
+      }
+    }
+  }
+}

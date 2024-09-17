@@ -1,0 +1,18 @@
+@import "../variables";
+
+.btn-explore {
+  margin: 19rem auto;
+  width: 14.4rem;
+  aspect-ratio: 1 / 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  transition: box-shadow 0.3s ease;
+
+  &:hover,
+  &:focus,
+  &:active {
+    box-shadow: 0 0 0rem 8.8rem rgb($white, 0.1);
+  }
+}

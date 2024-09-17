@@ -1,0 +1,18 @@
+---
+import "../styles/components/_large-button.scss";
+
+interface Props {
+  link: string;
+}
+
+const { link } = Astro.props;
+---
+
+<a href={link} class="fs-7 btn-explore bg-white text-dark">
+  <slot />
+</a>
+<br>
+
+<style>
+
+</style>

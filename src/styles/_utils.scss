@@ -67,30 +67,42 @@
 // Font size
 .fs-1 {
   font-size: $fs-1;
+  line-height: 171.9%;
 }
 .fs-2 {
   font-size: $fs-2;
+  line-height: 114.6%;
 }
 .fs-3 {
   font-size: $fs-3;
+  line-height: 64.2%;
 }
 .fs-4 {
   font-size: $fs-4;
+  line-height: 36.7%;
 }
 .fs-5 {
   font-size: $fs-5;
+  line-height: 33.6%;
+  letter-spacing: 4px;
 }
 .fs-6 {
   font-size: $fs-6;
+  line-height: 32.1%;
 }
 .fs-7 {
   font-size: $fs-7;
+  line-height: 16.8%;
+  letter-spacing: 2px;
 }
 .fs-8 {
   font-size: $fs-8;
+  line-height: 19.2%;
+  letter-spacing: 2px;
 }
 .fs-9 {
   font-size: $fs-9;
+  line-height: 180%;
 }
 
 // Spacing

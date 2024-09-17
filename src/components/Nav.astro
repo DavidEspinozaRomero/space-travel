@@ -3,13 +3,11 @@
 import '../styles/components/_nav.scss';
 
 // props
-// interface Props {
-// 	title: string;
-// 	body: string;
-// 	href: string;
-// }
+interface Props {
+	currentPage: number;
+}
 
-// const { href, title, body } = Astro.props;
+const { currentPage } = Astro.props;
 
 // variables
 let navItems = ['HOME', 'DESTINATION', 'CREW', 'TECHNOLOGY'];
@@ -19,7 +17,7 @@ let navItems = ['HOME', 'DESTINATION', 'CREW', 'TECHNOLOGY'];
   <nav class="nav-container">
     <ul class="nav-list">
       {
-        navItems.map((item, i) => (<li class="nav-item text-preset-8"> <a href={`/${item}`} class="nav-link"><b class="nav-number">0{i}</b>{item}</a> </li>))
+        navItems.map((item, i) => (<li class={`nav-item fs-8 ${currentPage === i ? 'active' : ''}`}> <a href={`/${item}`} class="nav-link"><b class="nav-number">0{i}</b>{item}</a> </li>))
       }
     </ul>
   </nav>

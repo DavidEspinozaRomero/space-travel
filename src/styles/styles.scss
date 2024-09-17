@@ -1,9 +1,20 @@
 @import "./resets";
 @import "./variables";
+@import "./utils";
 @import "./fonts";
 
 //  Globals
 
 body {
   font-family: $barlow;
+  color: $white;
+  background-color: $blue-900;
+}
+
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: inherit;
 }

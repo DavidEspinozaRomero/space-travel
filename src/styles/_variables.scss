@@ -1,27 +1,42 @@
 // Desing system variables
 
 // Colors
-$blue-900: 230, 35%, 7%;
-$blue-300: 231, 77%, 90%;
-$white: 0, 0%, 100%;
+// Hexadecimal
+$blue-900: #0b0d17;
+$blue-300: #d0d6f9;
+$white: #fff;
+
+//  HSL
+// $blue-900: 230 35% 7%;
+// $blue-300: 231 77% 90%;
+// $white: 0 0% 100%;
 
 // Typography
 
-$battlefair: "Battlefair", serif;
+$bellefair: "Bellefair", serif;
 $barlow-condensed: "Barlow Condensed", sans-serif;
 $barlow: "Barlow", sans-serif;
 
 // Font size
 
-$fs-900: 14.4rem;
-$fs-800: 10rem;
-$fs-700: 5.6rem;
-$fs-600: 3.2rem;
-$fs-500: 2.8rem;
-$fs-400: 2.8rem;
-$fs-300: 1.4rem;
-$fs-200: 1.6rem;
-$fs-100: 1.8rem;
+$fs-1: 14.4rem;
+$fs-2: 10rem;
+$fs-3: 5.6rem;
+$fs-4: 3.2rem;
+$fs-5: 2.8rem;
+$fs-6: 2.8rem;
+$fs-7: 1.4rem;
+$fs-8: 1.6rem;
+$fs-9: 1.8rem;
+// $fs-900: 14.4rem;
+// $fs-800: 10rem;
+// $fs-700: 5.6rem;
+// $fs-600: 3.2rem;
+// $fs-500: 2.8rem;
+// $fs-400: 2.8rem;
+// $fs-300: 1.4rem;
+// $fs-200: 1.6rem;
+// $fs-100: 1.8rem;
 
 // Font weight
 $fw-900: 900;

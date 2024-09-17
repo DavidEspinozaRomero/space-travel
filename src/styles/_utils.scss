@@ -11,18 +11,18 @@
 }
 
 .container {
-  max-width: 90rem;
+  // max-width: 90rem;
   margin-inline: auto;
-  padding-inline: 1.6rem;
+  padding-inline: 2.4rem;
 }
 
-.ff-serif-bellefair {
-  font-family: $battlefair;
+.ff-serif {
+  font-family: $bellefair;
 }
-.ff-sans-barlow {
+.ff-sans {
   font-family: $barlow;
 }
-.ff-sans-barlow-condensed {
+.ff-sans-cond {
   font-family: $barlow-condensed;
 }
 .text-center {
@@ -45,21 +45,60 @@
 }
 
 .bg-dark {
-  background-color: hsl($blue-900);
+  background-color: $blue-900;
 }
 .bg-accent {
-  background-color: hsl($blue-300);
+  background-color: $blue-300;
 }
 .bg-white {
-  background-color: hsl($white);
+  background-color: $white;
 }
 
 .text-dark {
-  color: hsl($blue-900);
+  color: $blue-900;
 }
 .text-accent {
-  color: hsl($blue-300);
+  color: $blue-300;
 }
 .text-white {
-  color: hsl($white);
+  color: $white;
+}
+
+// Font size
+.fs-1 {
+  font-size: $fs-1;
+}
+.fs-2 {
+  font-size: $fs-2;
+}
+.fs-3 {
+  font-size: $fs-3;
+}
+.fs-4 {
+  font-size: $fs-4;
+}
+.fs-5 {
+  font-size: $fs-5;
+}
+.fs-6 {
+  font-size: $fs-6;
+}
+.fs-7 {
+  font-size: $fs-7;
+}
+.fs-8 {
+  font-size: $fs-8;
+}
+.fs-9 {
+  font-size: $fs-9;
+}
+
+// Spacing
+
+.p-0 {
+  padding: 0;
+}
+
+.m-0 {
+  margin: 0;
 }

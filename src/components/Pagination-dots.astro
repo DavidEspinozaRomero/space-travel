@@ -1,0 +1,56 @@
+---
+import "../styles/components/_pagination-dots.scss";
+
+interface Props {
+  name: string,
+  content:string[]
+}
+
+const { name, content } = Astro.props;
+---
+
+<!-- Pagination Dots -->
+    <div class="wrapper">
+      <section class="pages flex">
+        {
+          content.map((_, idx) => (
+          <div class="page">
+            <input id={`page-${idx}`} type="radio" name={name} />
+            <label for={`page-${idx}`} class="fs-8"></label>
+          </div>
+          ))
+        }
+      </section>
+      <section class="content">
+        {
+          content.map((text, idx) => (
+            <p class="fs-9" hidden>
+              {text}
+            </p>
+          ))
+        }
+      </section>
+    </div>
+
+    <script>
+      const pages = document.querySelectorAll(".page");
+      const content = document.querySelectorAll(".content p");
+      
+      pages.forEach((page, idx) => {
+        page.addEventListener("click", () => {
+          content.forEach((c) => {
+            const isHidden = c.hasAttribute("hidden");
+            if (!isHidden) c.toggleAttribute("hidden");
+          });
+          content[idx].removeAttribute("hidden");
+        });
+      });
+      
+      const firstPage = pages[0].children[0];
+      const firstPageContent = content[0];
+
+      firstPage.toggleAttribute("checked");
+      firstPageContent.toggleAttribute("hidden");
+    </script>
+  
+<style></style>

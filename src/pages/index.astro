@@ -1,8 +1,10 @@
 ---
+import "../styles/pages/_index.scss";
+
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
+import LargeButton from '../components/Large-button.astro';
 
-import "../styles/pages/_index.scss";
 ---
 
 <Layout title="Space tourism website" >
@@ -18,8 +20,7 @@ import "../styles/pages/_index.scss";
 			<p class="fs-9 ">
 				Let’s face it; if you want to go to space, you might as well genuinely go to outer space and not hover kind of on the edge of it. Well sit back, and relax because we’ll give you a truly out of this world experience!
 			</p>
-			<a href="/destination" class="fs-7 btn-explore bg-white text-dark">EXPLORE</a>
-			<br>
+			<LargeButton link="/destination"> EXPLORE </LargeButton>
 		</article>
 	</main>
 </Layout>

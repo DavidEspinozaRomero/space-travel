@@ -1,4 +1,9 @@
 ---
+import Header from "../components/Header.astro";
+import LargeButton from "../components/Large-button.astro";
+import PaginationDots from "../components/Pagination-dots.astro";
+import PaginationNumbers from "../components/Pagination-numbers.astro";
+import Tabs from "../components/Tabs.astro";
 import Layout from "../layouts/Layout.astro";
 
 ---
@@ -48,61 +53,83 @@ import Layout from "../layouts/Layout.astro";
       <p class="fs-6"> <span>02 </span>Typography</p>
       <div class="flex">
 
-        <div class="flow">
+        <div class="flow width-50">
           <article class="">
-              <p class="m-0 fs-5 ">Text Preset 1 - Bellefair Regular</p>
-              <p class="m-0 fs-6 text-accent">144px - 171.9% Line Height (Normal) - 0px Letter Spacing</p>
+              <p class=" fs-8 ">Text Preset 1 - Bellefair Regular</p>
+              <p class=" fs-8 text-accent">144px - 171.9% Line Height (Normal) - 0px Letter Spacing</p>
               <p class="m-0 fs-1 ff-serif">EARTH</p>
           </article>
           <article class="">
-              <p class="m-0 fs-5 ">Text Preset 2 - Bellefair Regular</p>
-              <p class="m-0 fs-6 text-accent">100px - 114.6% Line Height (Normal) - 0px Letter Spacing</p>
+              <p class="fs-8 ">Text Preset 2 - Bellefair Regular</p>
+              <p class="fs-8 text-accent">100px - 114.6% Line Height (Normal) - 0px Letter Spacing</p>
               <p class="m-0 fs-2 ff-serif">VENUS</p>
           </article>
           <article class="">
-              <p class="m-0 fs-5 ">Text Preset 3 - Bellefair Regular</p>
-              <p class="m-0 fs-6 text-accent">56px - 64.2% Line Height (Normal) - 0px Letter Spacing</p>
+              <p class=" fs-8 ">Text Preset 3 - Bellefair Regular</p>
+              <p class=" fs-8 text-accent">56px - 64.2% Line Height (Normal) - 0px Letter Spacing</p>
               <p class="m-0 fs-3 ff-serif">JUPITER & SATURN</p>
           </article>
           <article class="">
-              <p class="m-0 fs-5 ">Text Preset 4 - Bellefair Regular</p>
-              <p class="m-0 fs-6 text-accent">32px - 36.7% Line Height (Normal) - 0px Letter Spacing</p>
+              <p class=" fs-8 ">Text Preset 4 - Bellefair Regular</p>
+              <p class=" fs-8 text-accent">32px - 36.7% Line Height (Normal) - 0px Letter Spacing</p>
               <p class="m-0 fs-4 ff-serif">URANUS, NEPTUNE, & PLUTO</p>
           </article>
           <article class="">
-              <p class="m-0 fs-5 ">Text Preset 5 - Barlow Condensed Regular</p>
-              <p class="m-0 fs-6 text-accent">28px - 33.6% Line Height (Normal) - 4px Letter Spacing</p>
+              <p class=" fs-8 ">Text Preset 5 - Barlow Condensed Regular</p>
+              <p class=" fs-8 text-accent">28px - 33.6% Line Height (Normal) - 4px Letter Spacing</p>
               <p class="m-0 fs-5 ff-sans-cond">HAUMEA, SEDNA, ERIS, & CERES</p>
           </article>
         </div>
-        <div class="flow">
+        <div class="flow width-50">
           <article class="">
-              <p class="m-0 fs-5 ">Text Preset 6 - Bellefair Regular</p>
-              <p class="m-0 fs-6 text-accent">28px - 32.1% Line Height (Normal) - 0px Letter Spacing</p>
+              <p class=" fs-8 ">Text Preset 6 - Bellefair Regular</p>
+              <p class=" fs-8 text-accent">28px - 32.1% Line Height (Normal) - 0px Letter Spacing</p>
               <p class="m-0 fs-6 ff-serif">384,400 km</p>
           </article>
           <article class="">
-              <p class="m-0 fs-5 ">Text Preset 7 - Barlow Condensed Regular</p>
-              <p class="m-0 fs-6 text-accent">14px - 16.8% Line Height (Normal) - 2px Letter Spacing</p>
+              <p class=" fs-8 ">Text Preset 7 - Barlow Condensed Regular</p>
+              <p class=" fs-8 text-accent">14px - 16.8% Line Height (Normal) - 2px Letter Spacing</p>
               <p class="m-0 fs-7 ff-sans-cond">AVG. DISTANCE</p>
           </article>
           <article class="">
-              <p class="m-0 fs-5 ">Text Preset 8 - Barlow Condensed Regular</p>
-              <p class="m-0 fs-6 text-accent">16px - 19.2% Line Height (Normal) - 2px Letter Spacing</p>
+              <p class=" fs-8 ">Text Preset 8 - Barlow Condensed Regular</p>
+              <p class=" fs-8 text-accent">16px - 19.2% Line Height (Normal) - 2px Letter Spacing</p>
               <p class="m-0 fs-8 ff-sans-cond">EUROPA</p>
           </article>
           <article class="">
-              <p class="m-0 fs-5 ">Text Preset 9 - Barlow Regular</p>
-              <p class="m-0 fs-6 text-accent">18px - 180% Line Height - 0px Letter Spacing</p>
+              <p class=" fs-8 ">Text Preset 9 - Barlow Regular</p>
+              <p class=" fs-8 text-accent">18px - 180% Line Height - 0px Letter Spacing</p>
               <p class="m-0 fs-9 ff-sans-cond" style="line-height: 180%;">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus hendrerit. Pellentesque aliquet nibh nec urna. In nisi neque, aliquet vel, dapibus id, mattis vel, nisi. Sed pretium, ligula sollicitudin laoreet viverra, tortor libero sodales leo, eget blandit nunc tortor eu nibh. Nullam mollis. Ut justo. Suspendisse potenti.Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus hendrerit. Pellentesque aliquet nibh nec urna. In nisi neque, aliquet vel, dapibus id, mattis vel, nisi. Sed pretium, ligula sollicitudin laoreet viverra, tortor libero sodales leo, eget blandit nunc tortor eu nibh. Nullam mollis. Ut justo. Suspendisse potenti.Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus hendrerit. Pellentesque aliquet nibh nec urna. In nisi neque, aliquet vel, dapibus id, mattis vel, nisi. </p>
           </article>
         </div>
       </div>
     </section>
+    <br>
+    <br>
+    <br>
 <hr>
 <section>
-  <p class="fs-6" style="margin-bottom: 15rem;"> <span>03 </span>Components</p>
-  <a href="#" class="fs-6 btn-explore bg-white text-dark" style="margin-left: 15rem; margin-bottom: 15rem;">Explore</a>
+  <h3 class="fs-6" style="margin-bottom: 15rem;"> <span>03 </span>Components</h3>
+  <!-- <h3 class="fs-6">Large Button</h3> -->
+  <LargeButton link="#"> EXPLORE </LargeButton>
+  <hr>
+  <h3 class="fs-6">Navigation</h3>
+   <Header currentPage={0}></Header>
+  <hr>
+  <h3 class="fs-6">Tabs</h3>
+  <Tabs />
+  <hr>
+  <h3 class="fs-6">Pagination</h3>
+  <h4 class="fs-7">Dots</h4>
+  <PaginationDots name="pagDots" content={["Lorem 1", "Lorem 2", "Lorem 3", "Lorem 4", "Lorem 5", "Lorem 6", "Lorem 7", "Lorem 8", "Lorem 9", "Lorem 10"]} />
+  <h4 class="fs-7">Numbers</h4>
+  <PaginationNumbers name="pagNumbers" content={["Lorem 1", "Lorem 2", "Lorem 3", "Lorem 4", "Lorem 5", "Lorem 6", "Lorem 7"	 ]} ></PaginationNumbers>
+  <br>
+  <br>
+  <hr>
+  <h3 class="fs-6">Extras</h3>
+  <br>
+  <br>
   <br>
 </section>
 
@@ -115,22 +142,9 @@ import Layout from "../layouts/Layout.astro";
 
   /* .flow > *:where(:not(:first-child)) {}*/
   .flow > * + * {
-    margin-top: var(--flow-space, 2rem);
+    margin-top: var(--flow-space, 4rem);
   }
-
-  .btn-explore {
-    width: 16rem;
-    aspect-ratio: 1 / 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%;
-    transition: box-shadow 0.3s ease;
-
-    &:hover,
-    &:focus,
-    &:active {
-      box-shadow: 0 0 0rem 8.8rem hsl(0 0 100 / 0.1);
-    }
+  .width-50 {
+    width: 50%;
   }
 </style>

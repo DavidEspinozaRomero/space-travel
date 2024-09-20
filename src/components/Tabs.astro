@@ -1,28 +1,25 @@
 ---
 import "../styles/components/_tabs.scss";
 
-const tabs = [
-  
-]
+interface Props {
+  name?: string;
+  tabs?: string[];
+}
+
+const { tabs = ["Tab menu", "Tab menu", "Tab menu"], name = "tabs" } = Astro.props;
 ---
 
 <!-- Tabs -->
 
     <div class="wrapper">
       <section class="tabs flex">
-        <section class="tab">
-          <input id="tab1" type="radio" name="test" checked />
-          <label for="tab1" class="tab__title fs-8"> TAB MENU </label>
-        </section>
-        <section class="tab">
-          <input id="tab2" type="radio" name="test" />
-          <label for="tab2" class="tab__title fs-8"> TAB MENU </label>
-        </section>
-        <section class="tab">
-          <input id="tab3" type="radio" name="test" />
-          <label for="tab3" class="tab__title fs-8"> TAB MENU </label>
-        </section>
-      </section>
+        {
+          tabs.map((tab, i) => (<section class="tab">
+            <input id={tab} type="radio" name={`${name}`} checked={i === 0} />
+            <label for={tab} class="tab__title fs-8"> {tab} </label>
+          </section>))
+        }
+
       <section class="content">
         <!-- <p>
           1 Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugit

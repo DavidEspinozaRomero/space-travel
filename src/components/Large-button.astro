@@ -3,12 +3,13 @@ import "../styles/components/_large-button.scss";
 
 interface Props {
   link: string;
+  className?: string;
 }
 
-const { link } = Astro.props;
+const { link, className = "fs-7" } = Astro.props;
 ---
 
-<a href={link} class="fs-7 btn-explore bg-white text-dark">
+<a href={link} class={`btn-explore bg-white text-dark ${className}`}>
   <slot />
 </a>
 <br>

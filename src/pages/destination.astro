@@ -1,0 +1,22 @@
+---
+import "../styles/pages/_index.scss";
+
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Tabs from "../components/Tabs.astro";
+
+---
+
+<Layout title="Space tourism website" >
+	<body>
+		<Header currentPage={0}/>
+		<main class="container">
+			<p> <span>01 </span>Destination</p>
+			<img src="src/assets/destination/image-moon.webp" alt="img of the moon" class="img-destination">
+      <Tabs name="destinations" tabs={["moon", "mars", "europa", "titan"]} />
+    
+		</main>
+	</body>
+</Layout>
+
+<style></style>

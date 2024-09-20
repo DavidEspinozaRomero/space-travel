@@ -24,7 +24,7 @@ aside {
     padding-left: 3.2rem;
   }
   li {
-    margin: 3.2rem auto;
+    margin-block: 3.2rem;
     font-size: $fs-8;
 
     &:hover,
@@ -49,17 +49,17 @@ aside {
   }
   aside {
     position: initial;
-    width: max-content;
-    // padding-top: 1.6rem;
+    width: calc(100% - 10rem);
+    margin-right: -3.2rem;
     max-height: 10rem;
     background-color: rgb($white, 0.1);
     backdrop-filter: blur(0.8rem);
 
     ul {
+      gap: var(--gap, 1.6rem);
       display: flex;
-      justify-content: space-between;
-      // margin: initial;
-      // padding-left: 3.2rem;
+      justify-content: flex-end;
+      padding-right: 1.6rem;
     }
     li {
       margin-inline: 1.6rem;
@@ -74,11 +74,32 @@ aside {
         border-bottom: 3px solid rgb($white, 0.5);
       }
 
-      // if li has active class
       &.active {
         border-right: initial;
         border-bottom: 3px solid $white;
       }
     }
+  }
+}
+
+@media (width >= 1024px) {
+  aside {
+    width: calc(100% - 40vw);
+  }
+}
+
+//  Background Image
+
+body {
+  background-image: url("src/assets/home/background-home-mobile.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  @media (width >= 768px) {
+    background-image: url("src/assets/home/background-home-tablet.jpg");
+  }
+  @media (width >= 1024px) {
+    background-image: url("src/assets/home/background-home-desktop.jpg");
   }
 }

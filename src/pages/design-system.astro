@@ -3,6 +3,7 @@ import Header from "../components/Header.astro";
 import LargeButton from "../components/Large-button.astro";
 import PaginationDots from "../components/Pagination-dots.astro";
 import PaginationNumbers from "../components/Pagination-numbers.astro";
+import TabCircleBtn from "../components/Tab-circle-btn.astro";
 import Tabs from "../components/Tabs.astro";
 import Layout from "../layouts/Layout.astro";
 
@@ -120,6 +121,8 @@ import Layout from "../layouts/Layout.astro";
   <Tabs />
   <hr>
   <h3 class="fs-6">Pagination</h3>
+  <h4 class="fs-7">Button Dots</h4>
+  <TabCircleBtn></TabCircleBtn>
   <h4 class="fs-7">Dots</h4>
   <PaginationDots name="pagDots" content={["Lorem 1", "Lorem 2", "Lorem 3", "Lorem 4", "Lorem 5", "Lorem 6", "Lorem 7", "Lorem 8", "Lorem 9", "Lorem 10"]} />
   <h4 class="fs-7">Numbers</h4>

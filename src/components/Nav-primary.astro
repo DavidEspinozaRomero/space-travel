@@ -5,19 +5,18 @@ import '../styles/components/_nav.scss';
 // props
 interface Props {
 	currentPage: number;
+  navItems: string[];
 }
 
-const { currentPage } = Astro.props;
+const { currentPage, navItems = ['home', 'destination', 'crew', 'technology'] } = Astro.props;
 
-// variables
-let navItems = ['HOME', 'DESTINATION', 'CREW', 'TECHNOLOGY'];
 ---
 <aside class="nav">
   <img width="24" height="21" class="btn-close-menu" src="src/assets/shared/icon-close.svg" alt="close button">
   <nav class="nav-container">
     <ul class="nav-list">
       {
-        navItems.map((item, i) => (<li class={`nav-item fs-8 ff-sans-cond ${currentPage === i ? 'active' : ''}`}> <a href={`/${item}`} class="nav-link"><b class="nav-number">0{i}</b>{item}</a> </li>))
+        navItems.map((item, i) => (<li class={`nav-item fs-8 ff-sans-cond ${currentPage === i ? 'active' : ''}`}> <a href={`/${item}`} class="nav-link uppercase"><b class="nav-number">0{i}</b>{item}</a> </li>))
       }
     </ul>
   </nav>

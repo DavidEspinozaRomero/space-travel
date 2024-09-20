@@ -1,6 +1,7 @@
 ---
 import Logo from './Logo.astro';
-import Nav from './Nav-primary.astro';
+import NavPrimary from './Nav-primary.astro';
+
 
 interface Props {
   currentPage: number;
@@ -12,7 +13,7 @@ const { currentPage } = Astro.props;
 <header >
   <Logo />
   <img id="hamburger" width="24" height="21" src="src/assets/shared/icon-hamburger.svg" alt="menu button">
-  <Nav currentPage={currentPage}/>
+  <NavPrimary currentPage={currentPage}/>
 </header>
 
 <script >

@@ -1,0 +1,30 @@
+---
+---
+<div class="flex dot-inticators" style="align-items: center; justify-content: center;">
+  <button aria-selected="true" class="" style="--gap: 1.5rem"></button>
+  <button aria-selected="false" class=""></button>
+  <button aria-selected="false" class=""></button>
+</div>
+
+<style>
+  .dot-inticators > * { 
+    --bg-color: red;
+    --bg-opacity: .25;
+    cursor: pointer;
+    padding-inline: var(--gap, 1rem);
+    border: 0;
+    border-radius: 50%;
+    aspect-ratio: 1;
+    background-color:  hsl( 0 0 100 / var(--bg-opacity, 1) );
+    
+    transition: background-color .2s ease-in-out;
+    
+    & > .active, & > [aria-selected="true"] {
+      --bg-opacity: 1;
+      background-color:  hsl( 0 0 100 / 1 );
+    }
+    &:hover, &:focus {
+      background-color:  hsl( 0 0 100 / 0.5 );
+    }
+  }
+</style>

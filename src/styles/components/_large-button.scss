@@ -1,18 +1,35 @@
 @import "../variables";
 
 .btn-explore {
-  margin: 19rem auto;
-  width: 14.4rem;
+  --gap-padding: 5rem;
+  padding: var(--gap-padding, 5rem);
   aspect-ratio: 1 / 1;
-  display: flex;
+  border-radius: 50%;
+  display: inline-flex;
   justify-content: center;
   align-items: center;
-  border-radius: 50%;
   transition: box-shadow 0.3s ease;
+  margin-block: 10rem;
 
   &:hover,
-  &:focus,
-  &:active {
-    box-shadow: 0 0 0rem 8.8rem rgb($white, 0.1);
+  &:focus {
+    box-shadow: 0 0 0rem 8rem rgb($white, 0.1);
+  }
+}
+
+@media (width >= 768px) {
+  .btn-explore {
+    --gap-padding: 7rem;
+    margin-block: 10rem;
+    font-size: $fs-6;
+    &:hover,
+    &:focus {
+      box-shadow: 0 0 0rem 9rem rgb($white, 0.1);
+    }
+  }
+}
+@media (width >= 1024px) {
+  .btn-explore {
+    margin-block: 4rem;
   }
 }

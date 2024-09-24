@@ -26,6 +26,11 @@
   text-transform: uppercase;
 }
 
+.text-center {
+  text-align: center;
+  margin-inline: auto;
+}
+
 .ff-serif {
   font-family: $bellefair;
 }

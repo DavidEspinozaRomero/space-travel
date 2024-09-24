@@ -1,0 +1,28 @@
+---
+import "../styles/pages/_crew.scss";
+
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import PaginationDots from "../components/Pagination-dots.astro";
+
+
+---
+
+<Layout title="Space tourism | destination" >
+	<body>
+		<Header currentPage={1}/>
+		<main class="container hero-destination">
+			<p class="uppercase ff-sans-cond fs-5 hero-title"> <span class="fw-bold"> 01 </span> pick your Destination</p>
+      <div class="wrapper-x-image">
+        <img class="crew-img" src="src/assets/destination/image-moon.webp" alt="img of the moon" class="img-destination">
+        <div>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem non eveniet harum alias debitis aspernatur dicta? Tempore quaerat in optio neque molestias, culpa rerum doloribus! Consequuntur quod rerum numquam vel!</p>
+          <PaginationDots name="pagDots" content={["Lorem 1", "Lorem 2", "Lorem 3", "Lorem 4", "Lorem 5", "Lorem 6", "Lorem 7", "Lorem 8", "Lorem 9", "Lorem 10"]} />
+        </div>
+      </div>
+		</main>
+	</body>
+</Layout>
+
+<style></style>
+<script></script>

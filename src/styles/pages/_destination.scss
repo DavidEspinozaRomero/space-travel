@@ -1,0 +1,49 @@
+body {
+  background-image: url("src/assets/destination/background-destination-mobile.jpg");
+  @media (width >= 768px) {
+    background-image: url("src/assets/destination/background-destination-tablet.jpg");
+  }
+  @media (width >= 1024px) {
+    background-image: url("src/assets/destination/background-destination-desktop.jpg");
+  }
+}
+
+.hero-destination {
+}
+.hero-title {
+  margin-block: 2.4rem;
+}
+
+.planet-img {
+  width: 50%;
+  margin-inline: auto;
+  margin-block: 5rem;
+  transition: scale 0.3s ease;
+
+  &:hover,
+  &:focus {
+    scale: 1.1;
+  }
+}
+//  Media Queries
+
+@media (width < 1024px) {
+  .hero-destination {
+    text-align: center;
+    margin-inline: auto;
+  }
+}
+
+@media (width >= 1024px) {
+  .wrapper-content-image {
+    margin-top: 10rem;
+    display: flex;
+    gap: 5rem;
+    justify-content: space-between;
+    place-content: center;
+  }
+
+  .planet-img {
+    width: 40%;
+  }
+}

@@ -87,19 +87,3 @@ aside {
     width: calc(100% - 40vw);
   }
 }
-
-//  Background Image
-
-body {
-  background-image: url("src/assets/home/background-home-mobile.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  @media (width >= 768px) {
-    background-image: url("src/assets/home/background-home-tablet.jpg");
-  }
-  @media (width >= 1024px) {
-    background-image: url("src/assets/home/background-home-desktop.jpg");
-  }
-}

@@ -27,8 +27,8 @@ const { articles, name = "tabs" } = Astro.props;
       <section class="tabs flex">
         {
           articles.map(({tabLabel, title}, i) => (<section class="tab">
-            <input id={tabLabel} type="radio" name=name checked={i === 0} />
-            <label for={tabLabel} class="tab__title fs-8 uppercase"> {tabLabel} </label>
+            <input id={tabLabel} type="radio" name={name} checked={i === 0} />
+            <label for={tabLabel} class="tab__title ff-sans-cond fs-8 uppercase" > {tabLabel} </label>
           </section>))
         }
       </section>
@@ -37,22 +37,23 @@ const { articles, name = "tabs" } = Astro.props;
         
         {
         articles.map(({title,description,distance,travel}, i) => (
-        <article>
-          <h2 class="uppercase"> {title} </h2>
-          <p>
+        <article hidden={i !== 0}>
+          <h2 class="sr-only"> {title} </h2>
+          <p class="uppercase fs-2 ff-serif content-title"> {title} </p>
+          <p class="fs-9 text-accent">
             {description}
           </p>
           <hr>
           <div class="extra-info">
             <div>
-              <h3 class="uppercase"> avg. distance</h3>	
-              <p>
+              <p class="uppercase text-accent fs-7 ff-sans-cond"> avg. distance</p>	
+              <p class="fs-6 ff-serif uppercase">
                 {distance}
               </p>
             </div>
             <div>
-              <h3 class="uppercase"> est. travel time</h3>	
-              <p>
+              <p class="uppercase text-accent fs-7 ff-sans-cond"> est. travel time</p>	
+              <p class="fs-6 ff-serif uppercase">
                 {travel}
               </p>
             </div>
@@ -68,7 +69,7 @@ const { articles, name = "tabs" } = Astro.props;
 "src/assets/destination/image-mars.webp",
 "src/assets/destination/image-europa.webp",
 "src/assets/destination/image-titan.webp"]
-	    const img = document.querySelector('.img-destination');
+      const img = document.querySelector('.planet-img');
       const tabs = document.querySelectorAll(".tab");
       const content = document.querySelectorAll(".content article");
 
@@ -82,7 +83,6 @@ const { articles, name = "tabs" } = Astro.props;
           img!.src = images[idx];
         });
       });
-
     </script>
   
 <style></style>

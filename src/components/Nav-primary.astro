@@ -5,18 +5,24 @@ import '../styles/components/_nav.scss';
 // props
 interface Props {
 	currentPage: number;
-  navItems: string[];
+  navItems: navItem[];
 }
 
-const { currentPage, navItems = ['home', 'destination', 'crew', 'technology'] } = Astro.props;
+interface navItem {
+  label: string;
+  path: string;
+}
 
+const { currentPage, navItems = [ { label: "Home", path: "" }, { label: "Destination", path: "destination" }, { label: "Crew", path: "crew" }, { label: "Technology", path: "technology" } ] } = Astro.props;
 ---
 <aside class="nav">
   <img width="24" height="21" class="btn-close-menu" src="src/assets/shared/icon-close.svg" alt="close button">
   <nav class="nav-container">
     <ul class="nav-list">
       {
-        navItems.map((item, i) => (<li class={`nav-item fs-8 ff-sans-cond ${currentPage === i ? 'active' : ''}`}> <a href={`/${item}`} class="nav-link uppercase"><b class="nav-number">0{i}</b>{item}</a> </li>))
+        navItems.map(({label,path}, i) => ( <li class={`nav-item fs-8 ff-sans-cond ${currentPage === i ? 'active' : ''}`}>
+          <a href={path} class="nav-link uppercase  "><b class="nav-number">0{i}</b>{label}</a>
+        </li>))
       }
     </ul>
   </nav>

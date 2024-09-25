@@ -41,7 +41,7 @@ const { name, technology } = Astro.props;
       </section>
       <section class="contentNum">
         {
-          technology.map(({name,images,description}, idx) => (
+          technology.map(({name,description}, idx) => (
             <article hidden={idx !== 0}>
               <p class="fs-4 ff-serif uppercase  text-white-soft"> the terminology... </p>
               <p class="fs-3 ff-serif uppercase mt-0">{name}</p>
@@ -83,8 +83,9 @@ const { name, technology } = Astro.props;
             if (!isHidden) c.toggleAttribute("hidden");
           });
           content[idx].removeAttribute("hidden");
-          imgPortrait!.src = techImages[idx].portrait;
-          imgLandscape!.src = techImages[idx].landscape;
+          
+          (imgPortrait as HTMLImageElement).src = techImages[idx].portrait;
+          (imgLandscape as HTMLImageElement).src = techImages[idx].landscape;
         });
       });
       

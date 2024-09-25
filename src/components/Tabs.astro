@@ -80,7 +80,9 @@ const { articles, name = "tabs" } = Astro.props;
             if (!isHidden) c.toggleAttribute("hidden");
           });
           content[idx].removeAttribute("hidden");
-          (img as HTMLImageElement).src = images[idx];
+          if (img instanceof HTMLImageElement) {
+            img.src = images[idx];
+          }
         });
       });
     </script>

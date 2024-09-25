@@ -83,9 +83,13 @@ const { name, technology } = Astro.props;
             if (!isHidden) c.toggleAttribute("hidden");
           });
           content[idx].removeAttribute("hidden");
-          
-          (imgPortrait as HTMLImageElement).src = techImages[idx].portrait;
-          (imgLandscape as HTMLImageElement).src = techImages[idx].landscape;
+
+          if (imgPortrait instanceof HTMLImageElement) {
+            imgPortrait.src = techImages[idx].portrait;
+          }          
+          if (imgLandscape instanceof HTMLImageElement) {
+            imgLandscape.src = techImages[idx].portrait;
+          }
         });
       });
       

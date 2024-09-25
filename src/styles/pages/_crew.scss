@@ -1,0 +1,22 @@
+body {
+  background-image: url("src/assets/crew/background-crew-mobile.jpg");
+  @media (width >= 768px) {
+    background-image: url("src/assets/crew/background-crew-tablet.jpg");
+  }
+  @media (width >= 1024px) {
+    background-image: url("src/assets/crew/background-crew-desktop.jpg");
+  }
+}
+
+.hero-title {
+  margin-block: 10rem;
+}
+
+// Media Queries
+
+@media (width < 1024px) {
+  .hero-crew {
+    text-align: center;
+    margin-inline: auto;
+  }
+}

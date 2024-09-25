@@ -5,21 +5,42 @@ import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import PaginationDots from "../components/Pagination-dots.astro";
 
+// variables
+  const crew = [
+    {
+      name: "Douglas Hurley",
+      image:  "src/assets/crew/image-douglas-hurley.webp",
+      role: "Commander",
+      bio: "Douglas Gerald Hurley is an American engineer, former Marine Corps pilot and former NASA astronaut. He launched into space for the third time as commander of Crew Dragon Demo-2."
+    },
+    {
+      name: "Mark Shuttleworth",
+      image:  "src/assets/crew/image-mark-shuttleworth.webp",
+      role: "Mission Specialist",
+      bio: "Mark Richard Shuttleworth is the founder and CEO of Canonical, the company behind the Linux-based Ubuntu operating system. Shuttleworth became the first South African to travel to space as a space tourist."
+    },
+    {
+      name: "Victor Glover",
+      image:  "src/assets/crew/image-victor-glover.webp",
+      role: "Pilot",
+      bio: "Pilot on the first operational flight of the SpaceX Crew Dragon to the International Space Station. Glover is a commander in the U.S. Navy where he pilots an F/A-18.He was a crew member of Expedition 64, and served as a station systems flight engineer."
+    },
+    {
+      name: "Anousheh Ansari",
+      image:  "src/assets/crew/image-anousheh-ansari.webp",
+      role: "Flight Engineer",
+      bio: "Anousheh Ansari is an Iranian American engineer and co-founder of Prodea Systems. Ansari was the fourth self-funded space tourist, the first self-funded woman to fly to the ISS, and the first Iranian in space."
+    }
+  ]
 
 ---
 
-<Layout title="Space tourism | destination" >
+<Layout title="Space tourism | crew" >
 	<body>
-		<Header currentPage={1}/>
-		<main class="container hero-destination">
-			<p class="uppercase ff-sans-cond fs-5 hero-title"> <span class="fw-bold"> 01 </span> pick your Destination</p>
-      <div class="wrapper-x-image">
-        <img class="crew-img" src="src/assets/destination/image-moon.webp" alt="img of the moon" class="img-destination">
-        <div>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem non eveniet harum alias debitis aspernatur dicta? Tempore quaerat in optio neque molestias, culpa rerum doloribus! Consequuntur quod rerum numquam vel!</p>
-          <PaginationDots name="pagDots" content={["Lorem 1", "Lorem 2", "Lorem 3", "Lorem 4", "Lorem 5", "Lorem 6", "Lorem 7", "Lorem 8", "Lorem 9", "Lorem 10"]} />
-        </div>
-      </div>
+		<Header currentPage={2}/>
+		<main class="container hero-crew">
+			<p class="uppercase ff-sans-cond fs-5 hero-title"> <span class="fw-bold text-white-soft"> 02 </span> meet your crew </p>
+      <PaginationDots name="pagDots" crew={crew}/>
 		</main>
 	</body>
 </Layout>

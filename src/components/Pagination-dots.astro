@@ -1,40 +1,58 @@
 ---
+import Crew from "../pages/crew.astro";
 import "../styles/components/_pagination-dots.scss";
 
 interface Props {
   name: string,
-  content:string[]
+  crew:Crew[]
 }
 
-const { name, content } = Astro.props;
+interface Crew {
+  name: string,
+  image: string,
+  role: string,
+  bio: string
+}
+
+const { name, crew } = Astro.props;
 ---
 
 <!-- Pagination Dots -->
-    <div class="wrapper">
-      <section class="pages flex">
-        {
-          content.map((_, idx) => (
-          <div class="page">
-            <input id={`page-${idx}`} type="radio" name={name} />
-            <label for={`page-${idx}`} class="fs-8"></label>
-          </div>
-          ))
-        }
-      </section>
-      <section class="content">
-        {
-          content.map((text, idx) => (
-            <p class="fs-9" hidden>
-              {text}
-            </p>
-          ))
-        }
-      </section>
+    <div class="wrapper-pagination-crew">
+      <div class="">
+        <section class="content">
+          {
+            crew.map(({role, name, bio}, idx) => (
+              <article hidden={idx !== 0}>
+                <p class="fs-4 ff-serif uppercase  text-white-soft">{role}</p>
+                <p class="fs-3 ff-serif uppercase mt-0">{name}</p>
+                <p class="fs-9 text-accent">{bio}</p>
+              </article>
+            ))
+          }
+        </section>
+        <section class="pages flex">
+          {
+            crew.map((_, idx) => (
+            <div class="page">
+              <input id={`page-${idx}`} type="radio" name={name} checked={idx === 0} />
+              <label for={`page-${idx}`} class="fs-8"></label>
+            </div>
+            ))
+          }
+        </section>
+      </div>
+      {
+        crew.map(({role, name, image}, idx) => (
+          <img src={image} alt={`picture of ${role} - ${name}`} class={`img-crew ${idx === 0 ? "" : "sr-only"}`}>
+        ))
+      }
     </div>
 
     <script>
       const pages = document.querySelectorAll(".page");
-      const content = document.querySelectorAll(".content p");
+      const content = document.querySelectorAll(".content article");
+      const images = document.querySelectorAll(".img-crew");
       
       pages.forEach((page, idx) => {
         page.addEventListener("click", () => {
@@ -43,14 +61,21 @@ const { name, content } = Astro.props;
             if (!isHidden) c.toggleAttribute("hidden");
           });
           content[idx].removeAttribute("hidden");
+
+          images.forEach((img) => {
+            const isHidden = img.classList.contains("sr-only");
+            if (!isHidden) img.classList.add("sr-only");
+          });
+          images[idx].classList.remove("sr-only");
+
         });
       });
       
-      const firstPage = pages[0].children[0];
+      {/* const firstPage = pages[0].children[0];
       const firstPageContent = content[0];
 
       firstPage.toggleAttribute("checked");
-      firstPageContent.toggleAttribute("hidden");
+      firstPageContent.toggleAttribute("hidden"); */}
     </script>
-  
+
 <style></style>

@@ -1,24 +1,25 @@
 @import "../variables";
 
 .wrapper {
-  height: 5rem;
   width: fit-content;
   margin-inline: auto;
+  text-align: center;
 }
 .pages {
+  margin-block: 5rem;
+  place-content: center;
+  --gap: 2rem;
 }
 .pageNum {
   label {
     display: grid;
     place-content: center;
-    width: 6rem;
+    padding: var(--gap, 1.6rem);
     aspect-ratio: 1 / 1;
     border: 1px solid rgb($white, 0.18);
     border-radius: 50%;
-    margin-inline: 2.4rem;
     cursor: pointer;
     transition: border 0.3s ease-out, background-color 0.3s ease-out;
-    // background-color: rgb($white, 0.18);
 
     &:hover,
     &:focus {
@@ -38,4 +39,64 @@
   /* input[type="radio"]:checked + label + div {
     display: block;
   } */
+}
+
+.img-tech-portrait {
+  max-width: initial;
+  display: none;
+  width: 100vw;
+  width: 100dvw;
+  object-fit: cover;
+}
+
+.img-tech-landscape {
+  max-width: initial;
+  position: relative;
+  left: -4rem;
+  width: 100vw;
+  width: 100dvw;
+}
+
+@media (width >= 768px) {
+  .img-tech-portrait {
+    display: block;
+    position: relative;
+    left: -10rem;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+  }
+  .img-tech-landscape {
+    display: none;
+  }
+}
+
+@media (width >= 1024px) {
+  .wrapper-pagination-tech {
+    display: flex;
+    gap: 3rem;
+    flex-direction: row-reverse;
+    align-items: center;
+  }
+  .wrapper-pagination-tech > * {
+    flex: 1;
+  }
+
+  .pages {
+    --direction: column;
+  }
+  .wrapper {
+    display: flex;
+    gap: 3rem;
+    text-align: initial;
+  }
+  .pageNum {
+    --gap: 3rem;
+  }
+
+  .img-tech-portrait {
+    display: block;
+    width: 100%;
+    aspect-ratio: 1;
+    left: 12rem;
+  }
 }

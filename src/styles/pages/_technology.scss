@@ -1,0 +1,13 @@
+body {
+  background-image: url("src/assets/technology/background-technology-mobile.jpg");
+  @media (width >= 768px) {
+    background-image: url("src/assets/technology/background-technology-tablet.jpg");
+  }
+  @media (width >= 1024px) {
+    background-image: url("src/assets/technology/background-technology-desktop.jpg");
+  }
+}
+
+.hero-title {
+  margin-block: 10rem;
+}

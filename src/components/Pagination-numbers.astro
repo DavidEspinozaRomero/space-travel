@@ -3,38 +3,78 @@ import "../styles/components/_pagination-numbers.scss";
 
 interface Props {
   name: string,
-  content:string[]
+  technology: Technology[]
 }
 
-const { name, content } = Astro.props;
+interface Technology {
+  name: string,
+  images: {
+    portrait: string,
+    landscape: string
+  },
+  description: string
+}
+
+const { name, technology } = Astro.props;
 ---
 
 <!-- Pagination Dots -->
+  <div class="wrapper-pagination-tech">
+    <div>
+
+      <img src='src/assets/technology/image-launch-vehicle-portrait.jpg' alt='space launch 01' class='img-tech-portrait'>
+      
+      <!-- mobile -->
+      <img src='src/assets/technology/image-launch-vehicle-landscape.jpg' alt='space launch 01' class='img-tech-landscape'>
+
+    </div>
     <div class="wrapper">
-      <section class="pages flex">
+      <section class=" flex pages">
         {
-          content.map((_, idx) => (
+          technology.map((_, idx) => (
           <div class="pageNum">
-            <input id={`pageNum-${idx}`} type="radio" name={`${name}`} />
+            <input id={`pageNum-${idx}`} type="radio" name={name} checked={idx === 0} />
             <label for={`pageNum-${idx}`} class="fs-8 ff-serif">{idx+1}</label>
           </div>
           ))
         }
       </section>
-      <!-- <section class="contentNum">
+      <section class="contentNum">
         {
-          content.map((text, idx) => (
-            <p class="fs-9" hidden>
-              {text}
-            </p>
+          technology.map(({name,images,description}, idx) => (
+            <article hidden={idx !== 0}>
+              <p class="fs-4 ff-serif uppercase  text-white-soft"> the terminology... </p>
+              <p class="fs-3 ff-serif uppercase mt-0">{name}</p>
+              <p class="fs-9 text-accent ">{description}</p>
+            </article>
           ))
         }
-      </section> -->
+      </section>
     </div>
+  </div>
 
     <script>
+      const techImages = [
+        {
+        portrait: "src/assets/technology/image-launch-vehicle-portrait.jpg",
+        landscape: "src/assets/technology/image-launch-vehicle-landscape.jpg"
+      },
+      {
+        portrait: "src/assets/technology/image-spaceport-portrait.jpg",
+        landscape: "src/assets/technology/image-spaceport-landscape.jpg"
+      },
+      {
+        portrait: "src/assets/technology/image-space-capsule-portrait.jpg",
+        landscape: "src/assets/technology/image-space-capsule-landscape.jpg"
+      }
+      ]
+      console.log(techImages);
+      
+      const imgPortrait = document.querySelector(".img-tech-portrait");
+      const imgLandscape = document.querySelector(".img-tech-landscape");
+
       const pages = document.querySelectorAll(".pageNum");
-      const content = document.querySelectorAll(".contentNum p");
+      const content = document.querySelectorAll(".contentNum article");
       
       pages.forEach((page, idx) => {
         page.addEventListener("click", () => {
@@ -43,14 +83,12 @@ const { name, content } = Astro.props;
             if (!isHidden) c.toggleAttribute("hidden");
           });
           content[idx].removeAttribute("hidden");
+          imgPortrait!.src = techImages[idx].portrait;
+          imgLandscape!.src = techImages[idx].landscape;
         });
       });
       
-      const firstPage = pages[0].children[0];
-      const firstPageContent = content[0];
-
-      firstPage.toggleAttribute("checked");
-      firstPageContent.toggleAttribute("hidden");
+      
     </script>
   
 <style></style>

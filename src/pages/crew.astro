@@ -4,30 +4,34 @@ import "../styles/pages/_crew.scss";
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import PaginationDots from "../components/Pagination-dots.astro";
+import douglasHurley from "../assets/crew/image-douglas-hurley.webp";
+import markShuttleworth from "../assets/crew/image-mark-shuttleworth.webp";
+import victorGlover from "../assets/crew/image-victor-glover.webp";
+import anoushehAnsari from "../assets/crew/image-anousheh-ansari.webp";
 
 // variables
   const crew = [
     {
       name: "Douglas Hurley",
-      image:  "src/assets/crew/image-douglas-hurley.webp",
+      image:  douglasHurley,
       role: "Commander",
       bio: "Douglas Gerald Hurley is an American engineer, former Marine Corps pilot and former NASA astronaut. He launched into space for the third time as commander of Crew Dragon Demo-2."
     },
     {
       name: "Mark Shuttleworth",
-      image:  "src/assets/crew/image-mark-shuttleworth.webp",
+      image:  markShuttleworth,
       role: "Mission Specialist",
       bio: "Mark Richard Shuttleworth is the founder and CEO of Canonical, the company behind the Linux-based Ubuntu operating system. Shuttleworth became the first South African to travel to space as a space tourist."
     },
     {
       name: "Victor Glover",
-      image:  "src/assets/crew/image-victor-glover.webp",
+      image:  victorGlover,
       role: "Pilot",
       bio: "Pilot on the first operational flight of the SpaceX Crew Dragon to the International Space Station. Glover is a commander in the U.S. Navy where he pilots an F/A-18.He was a crew member of Expedition 64, and served as a station systems flight engineer."
     },
     {
       name: "Anousheh Ansari",
-      image:  "src/assets/crew/image-anousheh-ansari.webp",
+      image:  anoushehAnsari,
       role: "Flight Engineer",
       bio: "Anousheh Ansari is an Iranian American engineer and co-founder of Prodea Systems. Ansari was the fourth self-funded space tourist, the first self-funded woman to fly to the ISS, and the first Iranian in space."
     }

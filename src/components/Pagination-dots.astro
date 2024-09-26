@@ -9,7 +9,7 @@ interface Props {
 
 interface Crew {
   name: string,
-  image: string,
+  image: ImageMetadata,
   role: string,
   bio: string
 }
@@ -44,7 +44,7 @@ const { name, crew } = Astro.props;
       </div>
       {
         crew.map(({role, name, image}, idx) => (
-          <img src={image} alt={`picture of ${role} - ${name}`} class={`img-crew ${idx === 0 ? "" : "sr-only"}`}>
+          <img src={image.src} alt={`picture of ${role} - ${name}`} class={`img-crew ${idx === 0 ? "" : "sr-only"}`}>
         ))
       }
     </div>
@@ -71,11 +71,6 @@ const { name, crew } = Astro.props;
         });
       });
       
-      {/* const firstPage = pages[0].children[0];
-      const firstPageContent = content[0];
-
-      firstPage.toggleAttribute("checked");
-      firstPageContent.toggleAttribute("hidden"); */}
     </script>
 
 <style></style>

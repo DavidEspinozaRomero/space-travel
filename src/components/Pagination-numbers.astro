@@ -9,8 +9,8 @@ interface Props {
 interface Technology {
   name: string,
   images: {
-    portrait: string,
-    landscape: string
+    portrait: ImageMetadata,
+    landscape: ImageMetadata
   },
   description: string
 }
@@ -20,12 +20,14 @@ const { name, technology } = Astro.props;
 
 <!-- Pagination Dots -->
   <div class="wrapper-pagination-tech">
-    <div>
+    <div class="wrapper-imgs">
 
-      <img src='src/assets/technology/image-launch-vehicle-portrait.jpg' alt='space launch 01' class='img-tech-portrait'>
-      
-      <!-- mobile -->
-      <img src='src/assets/technology/image-launch-vehicle-landscape.jpg' alt='space launch 01' class='img-tech-landscape'>
+      {
+        technology.map(({images, name}, idx) => (
+          <img src={images.portrait.src} alt={name} class={`img-tech-portrait ${idx === 0 ? "" : "sr-only"}`}>
+          <img src={images.landscape.src} alt={name} class={`img-tech-landscape ${idx === 0 ? "" : "sr-only"}`}>
+        ))
+      }
 
     </div>
     <div class="wrapper">
@@ -54,28 +56,14 @@ const { name, technology } = Astro.props;
   </div>
 
     <script>
-      const techImages = [
-        {
-        portrait: "src/assets/technology/image-launch-vehicle-portrait.jpg",
-        landscape: "src/assets/technology/image-launch-vehicle-landscape.jpg"
-      },
-      {
-        portrait: "src/assets/technology/image-spaceport-portrait.jpg",
-        landscape: "src/assets/technology/image-spaceport-landscape.jpg"
-      },
-      {
-        portrait: "src/assets/technology/image-space-capsule-portrait.jpg",
-        landscape: "src/assets/technology/image-space-capsule-landscape.jpg"
-      }
-      ]
-      console.log(techImages);
       
-      const imgPortrait = document.querySelector(".img-tech-portrait");
-      const imgLandscape = document.querySelector(".img-tech-landscape");
-
+      const imgsPortrait = document.querySelectorAll(".img-tech-portrait");
+      const imgsLandscape = document.querySelectorAll(".img-tech-landscape");
+      const imgs = document.querySelectorAll(".wrapper-imgs img");
       const pages = document.querySelectorAll(".pageNum");
       const content = document.querySelectorAll(".contentNum article");
-      
+      console.log(imgs);
+
       pages.forEach((page, idx) => {
         page.addEventListener("click", () => {
           content.forEach((c) => {
@@ -84,15 +72,16 @@ const { name, technology } = Astro.props;
           });
           content[idx].removeAttribute("hidden");
 
-          if (imgPortrait instanceof HTMLImageElement) {
-            imgPortrait.src = techImages[idx].portrait;
-          }          
-          if (imgLandscape instanceof HTMLImageElement) {
-            imgLandscape.src = techImages[idx].portrait;
-          }
+          imgs.forEach((img) => {
+            const isHidden = img.classList.contains("sr-only");
+            if (!isHidden) img.classList.toggle("sr-only");
+          });
+
+          imgsPortrait[idx].classList.remove("sr-only");
+          imgsLandscape[idx].classList.remove("sr-only");
+
         });
       });
-      
       
     </script>
   

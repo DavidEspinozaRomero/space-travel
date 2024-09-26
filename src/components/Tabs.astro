@@ -12,10 +12,6 @@ interface Article {
   description: string;
   distance: string;
   travel: string;
-  images: {
-    png: string,
-    webp: string
-  }
 }
 
 const { articles, name = "tabs" } = Astro.props;
@@ -65,11 +61,7 @@ const { articles, name = "tabs" } = Astro.props;
     </div>
 
     <script>
-      const images = ["src/assets/destination/image-moon.webp",
-"src/assets/destination/image-mars.webp",
-"src/assets/destination/image-europa.webp",
-"src/assets/destination/image-titan.webp"]
-      const img = document.querySelector('.planet-img');
+      const imgs = document.querySelectorAll('.planet-img');
       const tabs = document.querySelectorAll(".tab");
       const content = document.querySelectorAll(".content article");
 
@@ -80,9 +72,12 @@ const { articles, name = "tabs" } = Astro.props;
             if (!isHidden) c.toggleAttribute("hidden");
           });
           content[idx].removeAttribute("hidden");
-          if (img instanceof HTMLImageElement) {
-            img.src = images[idx];
-          }
+
+          imgs.forEach((img) => {
+            const isHidden = img.classList.contains("sr-only");
+            if (!isHidden) img.classList.toggle("sr-only");
+          });
+          imgs[idx].classList.remove("sr-only");
         });
       });
     </script>

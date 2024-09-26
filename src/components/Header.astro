@@ -1,7 +1,7 @@
 ---
 import Logo from './Logo.astro';
 import NavPrimary from './Nav-primary.astro';
-
+import iconHamburger from "../assets/shared/icon-hamburger.svg";
 
 interface Props {
   currentPage: number;
@@ -12,7 +12,7 @@ const { currentPage } = Astro.props;
 
 <header >
   <Logo />
-  <img id="hamburger" width="24" height="21" src="../assets/shared/icon-hamburger.svg" alt="menu button">
+  <img id="hamburger" width="24" height="21" src={iconHamburger.src} alt="menu button">
   <NavPrimary currentPage={currentPage} navItems={[ { label: "Home", path: "/" }, { label: "Destination", path: "/destination" }, { label: "Crew", path: "/crew" }, { label: "Technology", path: "/technology" } ]}/>
 </header>
 

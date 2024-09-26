@@ -1,6 +1,8 @@
 ---
 import Image from "astro/components/Image.astro";
+
+import logoSrc from "../assets/shared/logo.svg";
 ---
 <a href="/" class="logo">
-  <Image width="48" height="48" src="/public/shared/logo.svg" alt="logo" /> 
+  <img width="48" height="48" src={logoSrc.src} alt="logo" /> 
 </a>

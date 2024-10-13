@@ -86,29 +86,30 @@
 }
 
 // Font size
+
 .fs-1 {
-  font-size: $fs-1;
+  font-size: clamp($fs-1, 57.739rem + 6.9565vw, $fs-l-1);
   line-height: 171.9%;
 }
 .fs-2 {
-  font-size: $fs-2;
+  font-size: clamp($fs-2, 40.696rem + 4.7826vw, $fs-l-2);
   line-height: 114.6%;
 }
 .fs-3 {
-  font-size: $fs-3;
+  font-size: clamp($fs-3, 12.8688rem + 3.4783vw, $fs-l-3);
   line-height: 64.2%;
 }
 .fs-4 {
-  font-size: $fs-4;
+  font-size: clamp($fs-4, 13.1312rem + 1.5217vw, $fs-l-4);
   line-height: 36.7%;
 }
 .fs-5 {
-  font-size: $fs-5;
+  font-size: clamp($fs-5, 17.2176rem + 0.8696vw, $fs-l-5);
   line-height: 33.6%;
   letter-spacing: 4px;
 }
 .fs-6 {
-  font-size: $fs-6;
+  font-size: clamp($fs-6, 11.8256rem + 1.3043vw, $fs-l-6);
   line-height: 32.1%;
 }
 .fs-7 {
@@ -117,12 +118,12 @@
   letter-spacing: 2px;
 }
 .fs-8 {
-  font-size: $fs-8;
+  font-size: clamp($fs-8, 13.304rem + 0.2174vw, $fs-l-8);
   line-height: 19.2%;
   letter-spacing: 2px;
 }
 .fs-9 {
-  font-size: $fs-9;
+  font-size: clamp($fs-9, 13.9568rem + 0.3261vw, $fs-l-9);
   line-height: 180%;
 }
 
